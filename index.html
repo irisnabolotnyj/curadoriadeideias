@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Work+Sans:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet" />
 
     <style>
-        /* ===== RESET ===== */
         * {
             margin: 0;
             padding: 0;
@@ -25,15 +24,15 @@
             min-height: 100vh;
         }
 
-        /* ===== TRILHO LATERAL – VERTICAL COM BASE PARA DENTRO ===== */
+        /* ===== SIDEBAR – ORIENTAÇÃO IGUAL AO DO CLAUDE ===== */
         .sidebar {
-            width: 55px;                 /* mais estreito, pois as letras estão deitadas */
+            width: 55px;
             background-color: #1A1A1A;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 20px 0;
+            padding: 30px 0;
             position: fixed;
             left: 0;
             top: 0;
@@ -54,10 +53,12 @@
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 700;
             font-size: 0.9rem;
-            letter-spacing: 1px;
+            letter-spacing: 0.12em;
             transition: 0.2s ease;
-            writing-mode: vertical-rl;     /* ← base das letras para a direita (dentro) */
-            text-orientation: mixed;       /* padrão – caracteres latinos girados 90° */
+            /* ORIENTAÇÃO EXATA DO CLAUDE: vertical-rl + rotate(180deg) */
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            text-orientation: mixed;      /* mantém as letras em pé */
         }
 
         .sidebar nav a:hover {
@@ -67,7 +68,7 @@
         /* ===== CONTEÚDO PRINCIPAL ===== */
         .main-content {
             flex: 1;
-            margin-left: 55px;            /* acompanha a sidebar */
+            margin-left: 55px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -91,7 +92,7 @@
 
         .frase-esquerda {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 400;
             color: #E5E7EB;
             letter-spacing: 0.5px;
@@ -100,7 +101,7 @@
 
         .temas-topo {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 500;
             letter-spacing: 2px;
             color: #E5E7EB;
@@ -121,12 +122,11 @@
         .assinatura-dra {
             font-family: 'Work Sans', sans-serif;
             font-weight: 300;
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #E5E7EB;
             letter-spacing: 0.3px;
             text-align: center;
-            margin-top: 3rem;
-            margin-right: 0;
+            margin-top: 2.5rem;
             white-space: nowrap;
         }
 
@@ -144,7 +144,7 @@
             pointer-events: none;
         }
 
-        /* ===== MARCA CENTRAL ===== */
+        /* ===== TÍTULO – AFASTAMENTO EQUILIBRADO ===== */
         .marca-central {
             display: flex;
             flex-direction: column;
@@ -158,15 +158,16 @@
             font-size: clamp(4rem, 12vw, 8rem);
             font-weight: 700;
             color: #FFFFFF;
-            letter-spacing: -3px;
+            letter-spacing: -1.5px;
             line-height: 0.9;
             white-space: nowrap;
             display: flex;
             align-items: baseline;
-            gap: 0.05em;
+            gap: 0.35em;
             margin-bottom: 0;
         }
 
+        /* ===== "DE" – letras d-e coladas, com respiro lateral ===== */
         .de-escada {
             display: inline-flex;
             align-items: baseline;
@@ -175,8 +176,9 @@
             font-weight: 400;
             color: #6B7280;
             gap: 0;
-            margin: 0;
+            margin: 0 0.1em;
             padding: 0;
+            letter-spacing: -0.15em;
         }
 
         .de-escada .d {
@@ -193,6 +195,7 @@
         @media (max-width: 768px) {
             .sidebar {
                 width: 50px;
+                padding: 20px 0;
             }
             .main-content {
                 margin-left: 50px;
@@ -200,15 +203,17 @@
             h1 {
                 font-size: clamp(2.5rem, 15vw, 5rem);
                 white-space: normal;
-                gap: 0.03em;
-                letter-spacing: -2px;
+                gap: 0.25em;
+                letter-spacing: -1px;
             }
             .de-escada {
                 font-size: 0.6em;
+                margin: 0 0.05em;
+                letter-spacing: -0.1em;
             }
             .assinatura-dra {
-                font-size: 0.9rem;
-                margin-top: 2.5rem;
+                font-size: 1rem;
+                margin-top: 2rem;
             }
             .topo-info {
                 top: 1rem;

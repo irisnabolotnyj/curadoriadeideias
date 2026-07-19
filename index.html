@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iris Nabolotnyj Martinez | Curadora de ideias</title>
+    <title>Acervo | Dra. Iris Nabolotnyj Martinez</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
@@ -15,8 +15,8 @@
         }
 
         body {
-            background: #faf7f2;
-            color: #2c2c2a;
+            background: #0a0a0a;                /* Preto de autoridade */
+            color: #f0f0f0;                     /* Texto claro para contraste */
             font-family: 'Inter', sans-serif;
             font-weight: 300;
             line-height: 1.7;
@@ -30,92 +30,96 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;           /* centraliza os itens horizontalmente */
-            text-align: center;            /* centraliza o texto dentro deles */
-            padding: 10vw;
-            max-width: 900px;
+            align-items: center;
+            text-align: center;
+            padding: 8vw;
+            max-width: 700px;
             margin: 0 auto;
             width: 100%;
         }
 
         h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(3rem, 8vw, 7rem);
-            font-weight: 500;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 600;
             letter-spacing: -0.02em;
-            line-height: 1;
-            margin-bottom: 0.15em;
-            color: #2c2c2a;
-            white-space: nowrap;
-        }
-
-        .subtitulo {
-            font-size: 1.8rem;
-            font-weight: 400;
-            margin-bottom: 1.8rem;
-            font-family: 'Cormorant Garamond', serif;
-            color: #2c2c2a;
+            margin-bottom: 0.2em;
+            color: #ffffff;
         }
 
         .destaque {
-            color: #4A6B3A;
+            color: #BFFF00;                     /* Verde limão vibrante */
         }
 
-        .descricao {
-            max-width: 520px;
-            font-size: 1rem;
+        .subtitulo {
+            font-size: 1.2rem;
             font-weight: 300;
-            color: #4a4844;
-            margin-bottom: 3rem;
-            line-height: 1.8;
-            white-space: nowrap;
+            color: #a0a0a0;
+            margin-bottom: 3.5rem;
         }
 
-        .link-jardim {
+        /* Lista do acervo */
+        .ideias-lista {
+            list-style: none;
+            width: 100%;
+            max-width: 450px;
+            margin-bottom: 3.5rem;
+        }
+
+        .ideias-lista li {
+            margin-bottom: 2rem;
+        }
+
+        .ideias-lista a {
             text-decoration: none;
-            color: #2c2c2a;
-            border-bottom: 1.5px solid #4A6B3A;
-            padding-bottom: 4px;
+            color: #BFFF00;                     /* Verde limão */
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+            display: inline-block;
+            padding-bottom: 3px;
+        }
+
+        .ideias-lista a:hover {
+            color: #FF0000;                     /* Vermelho sangue vivo */
+            border-bottom-color: #FF0000;
+        }
+
+        .data {
+            display: block;
+            font-size: 0.85rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            color: #7a7a7a;
+            margin-top: 0.2rem;
+        }
+
+        /* Link de volta */
+        .voltar {
+            text-decoration: none;
+            color: #BFFF00;                     /* Verde limão */
             font-size: 1rem;
             font-weight: 400;
-            letter-spacing: 0.02em;
+            border-bottom: 1.5px solid transparent;
+            padding-bottom: 3px;
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
 
-        .link-jardim:hover {
-            color: #4A6B3A;
-            border-bottom-color: #4A6B3A;
-        }
-
-        .folha {
-            display: inline-block;
-            width: 14px;
-            height: 14px;
-            background: #4A6B3A;
-            border-radius: 0 50% 50% 50%;
-            transform: rotate(45deg);
-            transition: transform 0.3s ease;
-        }
-
-        .link-jardim:hover .folha {
-            transform: rotate(45deg) scale(1.2);
-        }
-
-        .linha-terra {
-            width: 60px;
-            height: 1px;
-            background: #d4cfc4;
-            margin-top: 4rem;
+        .voltar:hover {
+            color: #FF0000;                     /* Vermelho sangue */
+            border-bottom-color: #FF0000;
         }
 
         footer {
             padding: 2rem 10vw;
             font-size: 0.85rem;
-            color: #9a948c;
-            border-top: 1px solid #eae6df;
+            color: #6a6a6a;
+            border-top: 1px solid #1f1f1f;
             text-align: center;
             font-weight: 300;
         }
@@ -123,25 +127,34 @@
 </head>
 <body>
     <main>
-        <h1>Iris Nabolotnyj Martinez</h1>
+        <h1><span class="destaque">Acervo</span></h1>
 
         <p class="subtitulo">
-            <span class="destaque">Curadora de ideias</span>
+            Textos com profundidade e posicionamento.
         </p>
 
-        <p class="descricao">
-            Escrevo, refletindo. Pesquiso, cultivando ideias sobre política, desigualdade, gênero e sociedade.
-        </p>
+        <ul class="ideias-lista">
+            <li>
+                <a href="#">A raiz da desigualdade</a>
+                <span class="data">Breve ensaio — em breve</span>
+            </li>
+            <li>
+                <a href="#">Gênero e poder: sementes de mudança</a>
+                <span class="data">Reflexão — em breve</span>
+            </li>
+            <li>
+                <a href="#">Política como cultivo coletivo</a>
+                <span class="data">Artigo — em breve</span>
+            </li>
+        </ul>
 
-        <a href="ideias.html" class="link-jardim">
-            <span class="folha"></span> Entrar
+        <a href="index.html" class="voltar">
+            ← Voltar ao início
         </a>
-
-        <div class="linha-terra"></div>
     </main>
 
     <footer>
-        © Iris Nabolotnyj Martinez
+        © Dra. Iris Nabolotnyj Martinez
     </footer>
 </body>
 </html>

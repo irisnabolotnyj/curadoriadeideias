@@ -1,2 +1,2 @@
-# curadoriadeideias
-Escrevo, refletindo. Pesquiso, cultivando ideias sobre política, desigualdade, gênero e sociedade.
+# acervodeideias
+Escrevo, pesquiso e cultivo reflexões sobre política, desigualdade, gênero e sociedade.

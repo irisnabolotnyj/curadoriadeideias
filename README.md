@@ -1,2 +1,2 @@
 # acervodeideias
-Cultivando reflexões sobre política e gênero.
+por Iris Nabolotnyj Martinez

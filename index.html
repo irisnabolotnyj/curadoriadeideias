@@ -1,275 +1,275 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Acervo de Ideias | Dra. Iris Nabolotnyj Martinez</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acervo de Ideias | Dra. Iris Nabolotnyj Martinez</title>
 
-    <!-- Fontes -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Work+Sans:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Work+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            background: #111111;
-            color: #E5E7EB;
-            font-family: 'Work Sans', sans-serif;
-            font-weight: 300;
-            display: flex;
-            min-height: 100vh;
-        }
+    body {
+      background: #111111;
+      color: #E5E7EB;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      display: flex;
+      min-height: 100vh;
+    }
 
-        /* ===== SIDEBAR – ORIENTAÇÃO IGUAL AO DO CLAUDE ===== */
-        .sidebar {
-            width: 55px;
-            background-color: #1A1A1A;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 30px 0;
-            position: fixed;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            z-index: 10;
-        }
+    /* ===== SIDEBAR ===== */
+    .sidebar {
+      width: 55px;
+      background-color: #1A1A1A;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 0;
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 10;
+    }
 
-        .sidebar nav {
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
-            align-items: center;
-        }
+    .sidebar nav {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      align-items: center;
+    }
 
-        .sidebar nav a {
-            text-decoration: none;
-            color: #8B5CF6;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 0.9rem;
-            letter-spacing: 0.12em;
-            transition: 0.2s ease;
-            /* ORIENTAÇÃO EXATA DO CLAUDE: vertical-rl + rotate(180deg) */
-            writing-mode: vertical-rl;
-            transform: rotate(180deg);
-            text-orientation: mixed;      /* mantém as letras em pé */
-        }
+    .sidebar nav a {
+      text-decoration: none;
+      color: #F2BB13;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      transition: 0.2s ease;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      text-orientation: mixed;
+    }
 
-        .sidebar nav a:hover {
-            color: #FFFFFF;
-        }
+    .sidebar nav a:hover {
+      color: #FFFFFF;
+    }
 
-        /* ===== CONTEÚDO PRINCIPAL ===== */
-        .main-content {
-            flex: 1;
-            margin-left: 55px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 4vw;
-            position: relative;
-            min-height: 100vh;
-        }
+    /* ===== CONTEÚDO PRINCIPAL ===== */
+    .main-content {
+      flex: 1;
+      margin-left: 55px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4vw;
+      position: relative;
+      min-height: 100vh;
+    }
 
-        .topo-info {
-            position: absolute;
-            top: 2rem;
-            left: 2.5rem;
-            right: 2.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            width: calc(100% - 5rem);
-        }
+    /* ===== TOPO ===== */
+    .topo-info {
+      position: absolute;
+      top: 2.5rem;
+      left: 2.5rem;
+      right: 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      width: calc(100% - 5rem);
+    }
 
-        .frase-esquerda {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 400;
-            color: #E5E7EB;
-            letter-spacing: 0.5px;
-            white-space: nowrap;
-        }
+    .frase-esquerda {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #7C3AED;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+    }
 
-        .temas-topo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 500;
-            letter-spacing: 2px;
-            color: #E5E7EB;
-            text-transform: uppercase;
-            white-space: nowrap;
-        }
+    .temas-topo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      color: #E5E7EB;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
 
-        .temas-topo .ponto {
-            color: #8B5CF6;
-            font-weight: 700;
-            font-size: 1.8rem;
-            line-height: 0.8;
-            margin: 0 0.1em;
-            display: inline-block;
-            vertical-align: middle;
-        }
+    .temas-topo .ponto {
+      color: #F2BB13;
+      font-weight: 700;
+      font-size: 1.8rem;
+      line-height: 0.8;
+      margin: 0 0.1em;
+      display: inline-block;
+      vertical-align: middle;
+    }
 
-        .assinatura-dra {
-            font-family: 'Work Sans', sans-serif;
-            font-weight: 300;
-            font-size: 1.1rem;
-            color: #E5E7EB;
-            letter-spacing: 0.3px;
-            text-align: center;
-            margin-top: 2.5rem;
-            white-space: nowrap;
-        }
+    /* ===== MARCA CENTRAL ===== */
+    .marca-central {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      margin-top: -2rem;
+    }
 
-        .direitos {
-            position: absolute;
-            bottom: 1.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.7rem;
-            font-weight: 300;
-            color: #8B5CF6;
-            text-align: center;
-            white-space: nowrap;
-            letter-spacing: 0.5px;
-            pointer-events: none;
-        }
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(4rem, 12vw, 8rem);
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: -1.5px;
+      line-height: 0.9;
+      white-space: nowrap;
+      display: flex;
+      align-items: baseline;
+      gap: 0.35em;
+      margin-bottom: 0.2em;
+    }
 
-        /* ===== TÍTULO – AFASTAMENTO EQUILIBRADO ===== */
-        .marca-central {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            width: 100%;
-        }
+    .de-normal {
+      font-family: inherit;
+      font-weight: inherit;
+      font-size: inherit;
+      color: inherit;
+      text-transform: lowercase;
+      letter-spacing: inherit;
+      position: relative;
+      top: 0;
+      transform: none;
+      margin: 0;
+    }
 
-        h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(4rem, 12vw, 8rem);
-            font-weight: 700;
-            color: #FFFFFF;
-            letter-spacing: -1.5px;
-            line-height: 0.9;
-            white-space: nowrap;
-            display: flex;
-            align-items: baseline;
-            gap: 0.35em;
-            margin-bottom: 0;
-        }
+    .assinatura-dra {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      font-size: 0.9rem;          /* ← agora igual ao resto */
+      color: #E5E7EB;
+      letter-spacing: 0.3px;
+      text-align: center;
+      margin-top: 0.8rem;
+      white-space: nowrap;
+    }
 
-        /* ===== "DE" – letras d-e coladas, com respiro lateral ===== */
-        .de-escada {
-            display: inline-flex;
-            align-items: baseline;
-            position: relative;
-            font-size: 0.75em;
-            font-weight: 400;
-            color: #6B7280;
-            gap: 0;
-            margin: 0 0.1em;
-            padding: 0;
-            letter-spacing: -0.15em;
-        }
+    .direitos {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.7rem;
+      font-weight: 300;
+      color: #7C3AED;
+      text-align: center;
+      white-space: nowrap;
+      letter-spacing: 0.5px;
+      pointer-events: none;
+    }
 
-        .de-escada .d {
-            position: relative;
-            top: -0.5em;
-        }
-
-        .de-escada .e {
-            position: relative;
-            top: 0.3em;
-        }
-
-        /* ===== RESPONSIVO ===== */
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 50px;
-                padding: 20px 0;
-            }
-            .main-content {
-                margin-left: 50px;
-            }
-            h1 {
-                font-size: clamp(2.5rem, 15vw, 5rem);
-                white-space: normal;
-                gap: 0.25em;
-                letter-spacing: -1px;
-            }
-            .de-escada {
-                font-size: 0.6em;
-                margin: 0 0.05em;
-                letter-spacing: -0.1em;
-            }
-            .assinatura-dra {
-                font-size: 1rem;
-                margin-top: 2rem;
-            }
-            .topo-info {
-                top: 1rem;
-                left: 1rem;
-                right: 1rem;
-                width: calc(100% - 2rem);
-            }
-            .frase-esquerda {
-                font-size: 0.7rem;
-            }
-            .temas-topo {
-                font-size: 0.75rem;
-            }
-            .temas-topo .ponto {
-                font-size: 1.4rem;
-            }
-            .sidebar nav a {
-                font-size: 0.8rem;
-            }
-        }
-    </style>
+    /* ===== RESPONSIVO ===== */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 50px;
+        padding: 20px 0;
+      }
+      .main-content {
+        margin-left: 50px;
+        padding: 6vw;
+      }
+      h1 {
+        font-size: clamp(2.5rem, 15vw, 5rem);
+        white-space: normal;
+        gap: 0.2em;
+        letter-spacing: -1px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .de-normal {
+        font-size: inherit;
+      }
+      .frase-esquerda {
+        font-size: 0.9rem;
+        white-space: normal;
+      }
+      .assinatura-dra {
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+      .topo-info {
+        top: 1rem;
+        left: 1rem;
+        right: 1rem;
+        width: calc(100% - 2rem);
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+      .temas-topo {
+        font-size: 0.9rem;
+        white-space: normal;
+      }
+      .temas-topo .ponto {
+        font-size: 1.4rem;
+      }
+      .sidebar nav a {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <aside class="sidebar">
-        <nav>
-            <a href="quem-sou.html">Quem sou</a>
-            <a href="servicos.html">Serviços</a>
-            <a href="publicacoes.html">Publicações</a>
-            <a href="contato.html">Contato</a>
-        </nav>
-    </aside>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <nav>
+      <a href="quem-sou.html">Quem sou</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="publicacoes.html">Publicações</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </aside>
 
-    <main class="main-content">
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="main-content">
 
-        <div class="topo-info">
-            <div class="frase-esquerda">O que não se nomeia, não se conhece.</div>
-            <div class="temas-topo">
-                Política <span class="ponto">·</span> Gênero <span class="ponto">·</span> Memória
-            </div>
-        </div>
+    <!-- TOPO -->
+    <div class="topo-info">
+      <span class="frase-esquerda">O que não se nomeia, não se conhece.</span>
+      <span class="temas-topo">
+        Política <span class="ponto">·</span> Gênero <span class="ponto">·</span> Memória
+      </span>
+    </div>
 
-        <div class="direitos">© Todos os direitos reservados</div>
+    <!-- DIREITOS -->
+    <div class="direitos">© Todos os direitos reservados</div>
 
-        <div class="marca-central">
-            <h1>
-                ACERVO 
-                <span class="de-escada">
-                    <span class="d">d</span><span class="e">e</span>
-                </span> 
-                IDEIAS
-            </h1>
-            <p class="assinatura-dra">por Dra. Iris Nabolotnyj Martinez</p>
-        </div>
+    <!-- MARCA CENTRAL -->
+    <div class="marca-central">
+      <h1>
+        ACERVO
+        <span class="de-normal">de</span>
+        IDEIAS
+      </h1>
 
-    </main>
+      <p class="assinatura-dra">por Dra. Iris Nabolotnyj Martinez</p>
+    </div>
+
+  </main>
 
 </body>
 </html>

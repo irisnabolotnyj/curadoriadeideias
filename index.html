@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acervo | Dra. Iris Nabolotnyj Martinez</title>
+    <title>Acervo de Ideias | Dra. Iris Nabolotnyj Martinez</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <!-- Fontes: Space Grotesk (títulos) + Work Sans (corpo e assinatura) -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Work+Sans:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -15,146 +16,250 @@
         }
 
         body {
-            background: #0a0a0a;                /* Preto de autoridade */
-            color: #f0f0f0;                     /* Texto claro para contraste */
-            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #f0f0f0;
+            font-family: 'Work Sans', sans-serif;
             font-weight: 300;
-            line-height: 1.7;
             display: flex;
-            flex-direction: column;
             min-height: 100vh;
         }
 
-        main {
+        /* ========== TRILHO ROXO LATERAL ========== */
+        .sidebar {
+            width: 60px;
+            background-color: #537FE7;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 10;
+        }
+
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .sidebar nav a {
+            text-decoration: none;
+            color: #BFFF00;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: 0.2s ease;
+            writing-mode: vertical-lr;
+            text-orientation: mixed;
+        }
+
+        .sidebar nav a:hover {
+            color: #FFFFFF;
+        }
+
+        /* ========== CONTEÚDO PRINCIPAL ========== */
+        .main-content {
             flex: 1;
+            margin-left: 60px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 8vw;
-            max-width: 700px;
-            margin: 0 auto;
+            padding: 4vw;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Container do topo: frase à esquerda, temas à direita */
+        .topo-info {
+            position: absolute;
+            top: 2rem;
+            left: 2.5rem;
+            right: 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            width: calc(100% - 5rem);
+        }
+
+        .frase-esquerda {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: #a0a0a0;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .temas-topo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: #8a9bb5;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .temas-topo .ponto {
+            color: #BFFF00;
+            font-weight: 700;
+            margin: 0 0.2em;
+        }
+
+        /* Assinatura da Dra. - Work Sans Regular, limpa e equilibrada */
+        .assinatura-dra {
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 400;                    /* Regular – nem fina, nem gordinha */
+            font-size: 1.4rem;
+            color: #8a9bb5;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            margin-top: 2.2rem;
+            text-align: right;
+            align-self: flex-end;
+            margin-right: -1.5rem;
+        }
+
+        /* Direitos reservados - marca d'água */
+        .direitos {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.7rem;
+            font-weight: 300;
+            color: #2a2a2a;
+            text-align: center;
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+            pointer-events: none;
+        }
+
+        /* ========== MARCA CENTRAL ========== */
+        .marca-central {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
             width: 100%;
         }
 
         h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(3rem, 8vw, 5rem);
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.2em;
-            color: #ffffff;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(4rem, 12vw, 8rem);
+            font-weight: 700;
+            color: #FFFFFF;
+            letter-spacing: -1px;
+            line-height: 0.9;
+            white-space: nowrap;
+            display: flex;
+            align-items: baseline;
+            gap: 0.5em;
+            margin-bottom: 0;
         }
 
-        .destaque {
-            color: #BFFF00;                     /* Verde limão vibrante */
-        }
-
-        .subtitulo {
-            font-size: 1.2rem;
-            font-weight: 300;
-            color: #a0a0a0;
-            margin-bottom: 3.5rem;
-        }
-
-        /* Lista do acervo */
-        .ideias-lista {
-            list-style: none;
-            width: 100%;
-            max-width: 450px;
-            margin-bottom: 3.5rem;
-        }
-
-        .ideias-lista li {
-            margin-bottom: 2rem;
-        }
-
-        .ideias-lista a {
-            text-decoration: none;
-            color: #BFFF00;                     /* Verde limão */
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s ease;
-            display: inline-block;
-            padding-bottom: 3px;
-        }
-
-        .ideias-lista a:hover {
-            color: #FF0000;                     /* Vermelho sangue vivo */
-            border-bottom-color: #FF0000;
-        }
-
-        .data {
-            display: block;
-            font-size: 0.85rem;
-            font-family: 'Inter', sans-serif;
-            font-weight: 300;
-            color: #7a7a7a;
-            margin-top: 0.2rem;
-        }
-
-        /* Link de volta */
-        .voltar {
-            text-decoration: none;
-            color: #BFFF00;                     /* Verde limão */
-            font-size: 1rem;
-            font-weight: 400;
-            border-bottom: 1.5px solid transparent;
-            padding-bottom: 3px;
-            transition: all 0.3s ease;
+        /* O "de" como escada */
+        .de-escada {
             display: inline-flex;
-            align-items: center;
-            gap: 6px;
+            align-items: baseline;
+            position: relative;
+            font-size: 0.75em;
+            font-weight: 400;
+            color: #FFFFFF;
+            gap: 0.2em;
         }
 
-        .voltar:hover {
-            color: #FF0000;                     /* Vermelho sangue */
-            border-bottom-color: #FF0000;
+        .de-escada .d {
+            position: relative;
+            top: -0.5em;
         }
 
-        footer {
-            padding: 2rem 10vw;
-            font-size: 0.85rem;
-            color: #6a6a6a;
-            border-top: 1px solid #1f1f1f;
-            text-align: center;
-            font-weight: 300;
+        .de-escada .e {
+            position: relative;
+            top: 0.3em;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 45px;
+            }
+            .main-content {
+                margin-left: 45px;
+            }
+            h1 {
+                font-size: clamp(2.5rem, 15vw, 5rem);
+                white-space: normal;
+            }
+            .de-escada {
+                font-size: 0.6em;
+            }
+            .assinatura-dra {
+                font-size: 1.1rem;
+                margin-right: -0.5rem;
+            }
+            .topo-info {
+                top: 1rem;
+                left: 1rem;
+                right: 1rem;
+                width: calc(100% - 2rem);
+            }
+            .frase-esquerda {
+                font-size: 0.7rem;
+            }
+            .temas-topo {
+                font-size: 0.75rem;
+            }
         }
     </style>
 </head>
 <body>
-    <main>
-        <h1><span class="destaque">Acervo</span></h1>
 
-        <p class="subtitulo">
-            Textos com profundidade e posicionamento.
-        </p>
+    <!-- TRILHO ROXO LATERAL -->
+    <aside class="sidebar">
+        <nav>
+            <a href="quem-sou.html">Quem sou</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="publicacoes.html">Publicações</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+    </aside>
 
-        <ul class="ideias-lista">
-            <li>
-                <a href="#">A raiz da desigualdade</a>
-                <span class="data">Breve ensaio — em breve</span>
-            </li>
-            <li>
-                <a href="#">Gênero e poder: sementes de mudança</a>
-                <span class="data">Reflexão — em breve</span>
-            </li>
-            <li>
-                <a href="#">Política como cultivo coletivo</a>
-                <span class="data">Artigo — em breve</span>
-            </li>
-        </ul>
+    <!-- TELA PRINCIPAL -->
+    <main class="main-content">
 
-        <a href="index.html" class="voltar">
-            ← Voltar ao início
-        </a>
+        <!-- Faixa superior com a frase e temas na mesma linha -->
+        <div class="topo-info">
+            <div class="frase-esquerda">O que não se nomeia, não se conhece.</div>
+            <div class="temas-topo">
+                Política <span class="ponto">·</span> Gênero <span class="ponto">·</span> Memória
+            </div>
+        </div>
+
+        <!-- Marca d'água direitos autorais -->
+        <div class="direitos">© Todos os direitos reservados</div>
+
+        <!-- Coração da Marca -->
+        <div class="marca-central">
+            <h1>
+                ACERVO 
+                <span class="de-escada">
+                    <span class="d">d</span><span class="e">e</span>
+                </span> 
+                IDEIAS
+            </h1>
+            <!-- Assinatura equilibrada -->
+            <p class="assinatura-dra">por Dra. Iris Nabolotnyj Martinez</p>
+        </div>
+
     </main>
 
-    <footer>
-        © Dra. Iris Nabolotnyj Martinez
-    </footer>
 </body>
 </html>

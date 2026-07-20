@@ -97,14 +97,14 @@
             grid-template-columns: 4.5fr 7.5fr;
             padding: 4rem 3.5rem;
             align-items: start;
-            gap: 3rem; /* Espaço uniforme entre a coluna da foto e do texto */
+            gap: 3rem;
         }
 
         /* COLUNA FOTO — Centralizada horizontalmente */
         .qs-foto-col {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centraliza a foto e o nome na sua respectiva coluna */
+            align-items: center;
             position: sticky;
             top: 4rem;
         }
@@ -123,7 +123,7 @@
             width: 100%;
             aspect-ratio: 3 / 4;
             object-fit: cover;
-            object-position: center 30%;
+            object-position: center;
             display: block;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -132,7 +132,7 @@
             margin-top: 1.5rem;
             width: 100%;
             max-width: 340px;
-            text-align: center; /* Texto centralizado acompanhando a foto */
+            text-align: center;
         }
         .nome-principal {
             font-size: 1rem;
@@ -314,6 +314,7 @@
 
             <div class="qs-foto-col">
                 <div class="qs-foto-wrapper">
+                    <!-- Nome simplificado para evitar quebras de link em navegadores locais -->
                     <img src="foto-iris.jpg" alt="Dra. Iris Nabolotnyj Martinez" />
                 </div>
 
@@ -338,7 +339,7 @@
                 </div>
 
                 <div class="qs-corpo">
-                    <p>Nasci em São Borja, na fronteira do Rio Grande do Sul com a Argentina. Crescer nessa cidade durante os anos 1990 aguçou o meu olhar sobre a memória política do país — fortemente marcada por figuras como Aparício Mariense, Getúlio Vargas, João Goulart e Leonel Brizola — e sobre o que se preserva e o que se apaga. Meu pai foi radialista e figura pública; herdei dele o compromisso com a palavra que alcança quem precisa. Minha avó materna era curandeira guarani. Com ela, aprendi que há formas de saber que precedem e excedem o que a academia chama de conhecimento.</p>
+                    <p>Nasci em São Borja, na fronteira do Rio Grande do Sul com a Argentina. Crescer nessa cidade durante os anos 1990 aguçou o meu olhar sobre a memória política do país — fortemente marcada por figures como Aparício Mariense, Getúlio Vargas, João Goulart e Leonel Brizola — e sobre o que se preserva e o que se apaga. Meu pai foi radialista e figura pública; herdei dele o compromisso com a palavra que alcança quem precisa. Minha avó materna era curandeira guarani. Com ela, aprendi que há formas de saber que precedem e excedem o que a academia chama de conhecimento.</p>
 
                     <p>Ser mulher e estudar política transformou-me: impulsionou-me para o mundo e fez-me enxergar dores além das minhas.</p>
 
